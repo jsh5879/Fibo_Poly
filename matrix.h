@@ -25,6 +25,14 @@ void Add(int** a, int** b, int** c, int m, int n)
 }
 void Multiply(int** a, int** b, int** c, int n)
 {
-	Transpose();
-	Add();
+	Transpose(b, n);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			c[i][j] = 0;
+			int sum = 0;
+			sum = a[i][j] * b[i][j];
+			c[i][j] = sum;
+		}
+	}
+
 }
